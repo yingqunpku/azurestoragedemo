@@ -30,7 +30,7 @@ function Config(){
 	this.testCases = [
 		{'name':'createContainer', 'desc':'Create a Blob Container'},
 		{'name':'createAppendBlob', 'desc':'Create a new append Blob from a local file'},
-		{'name':'appendBlob', 'desc':'Appends to an append blob from a text string. '},
+		{'name':'appendBlob', 'desc':'Appends to an append blob from a text string'},
 		{'name':'createBlob', 'desc':'Create a new block Blob from a local file'},
 		{'name':'deleteBlob', 'desc':'Delete the block Blob'},
 		{'name':'deleteContainer', 'desc':'Delete the Blob container'},

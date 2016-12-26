@@ -277,19 +277,5 @@
         "protectedSettings": null
       }
     }
-  ],
-  "outputs": {
-    "Demo URL": {
-        "value": "[concat('http://',reference(resourceId('Microsoft.Network/publicIPAddresses',variables('publicIPAddressName')), providers('Microsoft.Network', 'publicIPAddresses').apiVersions[0]).dnsSettings.fqdn, ':3000')]",
-        "type": "string"
-    },
-    "Account Name": {
-      "type": "string",
-      "value": "[variables('testStorageName')]"
-    },
-    "Account Key": {
-      "type": "string",
-      "value": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('testStorageName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value]"
-    }
-  }
+  ]
 }
