@@ -28,20 +28,20 @@ You could use one of these three tools to deploy the app:
 
 **PowerShell deployment code:**
 
-**Step 1. Create a new resource group on the portal or with the following scripts *[OPTIONAL]***
+Step 1. Create a new resource group on the portal or with the following scripts *[OPTIONAL]*
 > Select a subscription. If you have no idea about your subscription id, run Get-AzureRmSubscription will list all your subscriptions
-```PowerShell
-Select-AzureRmSubscription -SubscriptionId <YOUR SUBSCRIPTION ID>
-```
+> ```PowerShell
+> Select-AzureRmSubscription -SubscriptionId <YOUR SUBSCRIPTION ID>
+> ```
 > Create a resource group with whatever name you like but must be unique. If you have no idea what location to specify, run Get-AzureRmLocation will list all available locations
-```PowerShell
-New-AzureRmResourceGroup -Name acstest -Location local 
-```
+> ```PowerShell
+> New-AzureRmResourceGroup -Name acstest -Location local 
+> ```
 
-**Step 2. Kickoff the deployment**
-```PowerShell
-New-AzureRmResourceGroupDeployment -Name testdep -ResourceGroupName acstest -TemplateUri "https://raw.githubusercontent.com/yingqunpku/azurestoragedemo/master/ARMTemplate/Templates/WindowsVirtualMachine.json"  
-```
+Step 2. Kickoff the deployment
+> ```PowerShell
+> New-AzureRmResourceGroupDeployment -Name testdep -ResourceGroupName acstest -TemplateUri "https://raw.githubusercontent.com/yingqunpku/azurestoragedemo/master/ARMTemplate/Templates/WindowsVirtualMachine.json"  
+> ```
 
 
 ### Parameters
