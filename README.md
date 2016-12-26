@@ -1,4 +1,6 @@
-﻿# Azure (Stack) Storage Demo with Node.js
+﻿[TOC]
+
+# Azure (Stack) Storage Demo with Node.js
 This is a web app sample with Node.js bundled with ARM template and DSC Extension.
 The web app runs simple scenario tests against Azure Consistent Storage APIs through Azure Node.js SDK. 
 The bundle also demonstrates how a tenant could deploy an Azure (Stack) Node.js web application with DSC extension on an Azure (Stack) VM created with an ARM template.
@@ -23,20 +25,20 @@ You could use one of these three tools to deploy the app:
 * These magical buttons:
 [![Deploy to Azure.com](http://azuredeploy.net/deploybutton.png "Deploy to Azure.com")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2FWindowsVirtualMachine.json)  [![Deploy to Azure Stack](https://github.com/yingqunpku/azurestoragedemo/raw/master/ARMTemplate/Templates/deploytoazurestack.png "Deploy to Azure Stack")](https://portal.azurestack.local/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2FWindowsVirtualMachine.json)
 
-PowerShell deployment code:
 
-#### Step 1. Create a new resource group on the portal or with the following scripts
-*[OPTIONAL]*
-Select a subscription. If you have no idea about your subscription id, run Get-AzureRmSubscription will list all your subscriptions
+**PowerShell deployment code:**
+
+**Step 1. Create a new resource group on the portal or with the following scripts *[OPTIONAL]***
+> Select a subscription. If you have no idea about your subscription id, run Get-AzureRmSubscription will list all your subscriptions
 ```PowerShell
 Select-AzureRmSubscription -SubscriptionId <YOUR SUBSCRIPTION ID>
 ```
-Create a resource group with whatever name you like but must be unique. If you have no idea what location to specify, run Get-AzureRmLocation will list all available locations
+> Create a resource group with whatever name you like but must be unique. If you have no idea what location to specify, run Get-AzureRmLocation will list all available locations
 ```PowerShell
 New-AzureRmResourceGroup -Name acstest -Location local 
 ```
 
-#### Step 2. Kickoff the deployment
+**Step 2. Kickoff the deployment**
 ```PowerShell
 New-AzureRmResourceGroupDeployment -Name testdep -ResourceGroupName acstest -TemplateUri "https://raw.githubusercontent.com/yingqunpku/azurestoragedemo/master/ARMTemplate/Templates/WindowsVirtualMachine.json"  
 ```
@@ -52,7 +54,7 @@ There are 5 parameters (2 with default values) for the ARM Template deployed:
 
 ## Run the Demo App
 On both Azure and Azure Stack, you have to navigate to the portals to retrieve the URL of the demo application.
->1. Navigate to the Resource group blade that you've deployed the app with;
+* 1. Navigate to the Resource group blade that you've deployed the app with;
 2. Click on the resource "myPublicIP";
 3. You will get to know the IP address \<IPADDRESS> and DNS name \<DNS> of the app (DNS not applicable for Azure Stack for now).
 
