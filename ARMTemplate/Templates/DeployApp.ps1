@@ -15,8 +15,8 @@
 
     Script AppDownload {
         SetScript = {
-            $source = "https://armtemplate.blob.core.windows.net/bin/acsdemo.zip"
-            $destination = "c:\web\acsdemo.zip"
+            $source = "https://github.com/yingqunpku/azurestoragedemo/raw/master/DemoAPP/DemoAPP.zip"
+            $destination = "c:\web\DemoAPP.zip"
             new-item -itemtype directory -Path "c:\web\"
             Invoke-WebRequest $source -OutFile $destination
         }
@@ -27,7 +27,7 @@
 
     Archive AppExtract {
         Ensure = "Present"
-        Path = "c:\web\acsdemo.zip"
+        Path = "c:\web\DemoAPP.zip"
         Destination = "c:\web\"
         DependsOn="[Script]AppDownload"
     }
