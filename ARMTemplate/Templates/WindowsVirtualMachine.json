@@ -35,7 +35,7 @@
     },
     "modulesUrl": {
       "type": "string",
-      "defaultValue": "https://armtemplate.blob.core.windows.net/template/DeployApp.zip",
+      "defaultValue": "https://github.com/yingqunpku/azurestoragedemo/raw/master/ARMTemplate/Templates/DeployApp.zip",
       "metadata": {
         "description": "URL of zip file (DSC configuration files)."
       }
