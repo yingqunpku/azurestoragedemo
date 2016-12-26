@@ -1,6 +1,4 @@
-﻿[TOC]
-
-# Azure (Stack) Storage Demo with Node.js
+﻿# Azure (Stack) Storage Demo with Node.js
 This is a web app sample with Node.js bundled with ARM template and DSC Extension.
 The web app runs simple scenario tests against Azure Consistent Storage APIs through Azure Node.js SDK. 
 The bundle also demonstrates how a tenant could deploy an Azure (Stack) Node.js web application with DSC extension on an Azure (Stack) VM created with an ARM template.
@@ -15,14 +13,14 @@ You could deploy the app multiple times but only with different resource groups.
 
 ### Prerequisites
 To deploy this application, you must have one of the following: 
-* A subscription on Azure.com, or 
-* An Azure Stack TP2 deployment, a tenant subscription in that deployment, and a valid connection to your Azure Stack. [(Connect to Azure Stack)](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-azure-stack)
++ A subscription on Azure.com, or 
++ An Azure Stack TP2 deployment, a tenant subscription in that deployment, and a valid connection to your Azure Stack. [(Connect to Azure Stack)](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-azure-stack)
 
 ### Tools
 You could use one of these three tools to deploy the app:
-* Azure PowerShell [(Install PowerShell and connect to Azure Stack)](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-powershell)
-* Azure CLI [(Install and configure Azure Stack CLI)](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-cli)
-* These magical buttons:
++ Azure PowerShell [(Install PowerShell and connect to Azure Stack)](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-powershell)
++ Azure CLI [(Install and configure Azure Stack CLI)](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-cli)
++ These magical buttons:
 [![Deploy to Azure.com](http://azuredeploy.net/deploybutton.png "Deploy to Azure.com")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2FWindowsVirtualMachine.json)  [![Deploy to Azure Stack](https://github.com/yingqunpku/azurestoragedemo/raw/master/ARMTemplate/Templates/deploytoazurestack.png "Deploy to Azure Stack")](https://portal.azurestack.local/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2FWindowsVirtualMachine.json)
 
 
@@ -54,12 +52,10 @@ There are 5 parameters (2 with default values) for the ARM Template deployed:
 
 ## Run the Demo App
 On both Azure and Azure Stack, you have to navigate to the portals to retrieve the URL of the demo application.
-* 1. Navigate to the Resource group blade that you've deployed the app with;
-2. Click on the resource "myPublicIP";
-3. You will get to know the IP address \<IPADDRESS> and DNS name \<DNS> of the app (DNS not applicable for Azure Stack for now).
++ Navigate to the Resource group blade that you've deployed the app with;
++ Click on the resource "myPublicIP";
++ You will get to know the IP address \<IPADDRESS> and DNS name \<DNS> of the app (DNS not applicable for Azure Stack for now).
 
 Navigate to **http://\<IPADDRESS>:3000** or **http://\<DNS>:3000**. 
 Then, you will see the page with a form prefilled with some storage account information. 
-Go play with it or, alternatively, you could create a storage account by yourself and play with it on the app. Moreover, you could even create a storage account on a different environment and run the app against it, i.e., you could deploy your app in Azure Stack but run the tests against a storage account from Azure Global or Azure China (aka. Mooncake).
-
- 
+Go play with it or, alternatively, you could create a storage account by yourself and play with it on the app. Moreover, you could even create a storage account on a different environment and run the app against it, i.e., you could deploy your app in Azure Stack but run the tests against a storage account from Azure Global or Azure China.
