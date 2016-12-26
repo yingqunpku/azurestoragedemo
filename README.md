@@ -1,16 +1,14 @@
-﻿# DemoAPP
+﻿# Azure (Stack) Storage Demo with Node.js
+A web app sample with Node.js bundled with ARM template and DSC Extension
+The web app runs simple scenario tests against Azure Consistent Storage APIs through Azure Node.js SDK. 
+The bundle also demonstrates how a tenant could deploy an Azure (Stack) Node.js web application with DSC extension on an Azure (Stack) VM created with an ARM template.
 
-Step 1: Create a Basic Azure Node.js Express 4 Application in Visual Studio 2015
+<a href="http://armviz.io/#/?load=https://raw.githubusercontent.com/yingqunpku/azurestoragedemo/master/ARMTemplate/Templates/WindowsVirtualMachine.json" target="_blank">
+  <img src="http://armviz.io/visualizebutton.png" title="Visualize the ARM Template"/>
+</a>
 
-Step 2: Install the required modules with npm command line
-		# npm install
-
-Step 3: In order to keep the server running, I recommend you use node-supervisor to run ./bin/www, 
-	which requires installation:
-		# npm install supervisor@0.11.0 -g
-	and invoking:
-		# set NODE_TLS_REJECT_UNAUTHORIZED=0 
-		(to resolve 'UNABLE_TO_VERIFY_LEAF_SIGNATURE' issue)
-		# supervisor ./bin/www
-
-#End Of File#
+## Prerequisites
+To deploy this application, you must have one of the following: 
+* A subscription on Azure.com, or 
+* An Azure Stack TP2 deployment and a tenant subscription in that deployment
+Use Azure PowerShell or Azure CLI to deploy the application. 

@@ -36,7 +36,7 @@
     {
         Ensure = "Present"
         DestinationPath = "C:\web\public\storage.json"
-        Contents = '{"endpoint":"$storageEndpoint", "accountName":"$accountName", "accountKey":"$accountKey"}'
+        Contents = "{""endpoint"":""$storageEndpoint"", ""accountName"":""$accountName"", ""accountKey"":""$accountKey""}"
     }
 
     Script EnvPrep
