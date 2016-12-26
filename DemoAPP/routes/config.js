@@ -19,7 +19,7 @@ function Config(){
 	//this.blobName = "acstestblob";
 	//this.appendBlobName = "acstestappendblob";
 	this.blobFile = "msft.png"; // relative path from application root directory
-	this.appendBlobFile = "../README.md"; // relative path from application root directory
+	this.appendBlobFile = "package.json"; // relative path from application root directory
 
 	// Queue
 	this.queueName = "acstestqueue";
