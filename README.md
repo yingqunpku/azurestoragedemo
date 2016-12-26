@@ -24,37 +24,39 @@ You could use one of these three tools to deploy the app:
 [![Deploy to Azure.com](http://azuredeploy.net/deploybutton.png "Deploy to Azure.com")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2FWindowsVirtualMachine.json)  [![Deploy to Azure Stack](https://github.com/yingqunpku/azurestoragedemo/raw/master/ARMTemplate/Templates/deploytoazurestack.png "Deploy to Azure Stack")](https://portal.azurestack.local/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2FWindowsVirtualMachine.json)
 
 PowerShell deployment code:
+
+#### Step 1. Create a new resource group on the portal or with the following scripts
+*[OPTIONAL]*
+Select a subscription. If you have no idea about your subscription id, run Get-AzureRmSubscription will list all your subscriptions
 ```PowerShell
-\# Step 1. Create a new resource group on the portal or with the following scripts
-\# [OPTIONAL]
-// Select a subscription. 
-// If you have no idea about your subscription id, run Get-AzureRmSubscription will list all your subscriptions
 Select-AzureRmSubscription -SubscriptionId <YOUR SUBSCRIPTION ID>
-
-// Create a resource group with whatever name you like but must be unique
-// If you have no idea what location to specify, run Get-AzureRmLocation will list all available locations
+```
+Create a resource group with whatever name you like but must be unique. If you have no idea what location to specify, run Get-AzureRmLocation will list all available locations
+```PowerShell
 New-AzureRmResourceGroup -Name acstest -Location local 
+```
 
-// Step 2. Kickoff the deployment
+#### Step 2. Kickoff the deployment
+```PowerShell
 New-AzureRmResourceGroupDeployment -Name testdep -ResourceGroupName acstest -TemplateUri "https://raw.githubusercontent.com/yingqunpku/azurestoragedemo/master/ARMTemplate/Templates/WindowsVirtualMachine.json"  
 ```
 
 
 ### Parameters
 There are 5 parameters (2 with default values) for the ARM Template deployed:
-* "storageEndpoint": the target environment. Allowed values include "core.windows.net" and "AzureStack.local".
-* "adminUsername": the Admin username for the Virtual Machine that the template’s going to create.
-* "adminPassword": the password for the admin user. It must contain 3 of the following: 1 lowercase character, 1 uppercase character, 1 number, and 1 special character. Its minimum length is 12 characters.
-* "configurationFile" & "modulesUrl": reserved for Azure China deployment. Keep them as the default values.
++ **"storageEndpoint"**: the target environment. Allowed values include "core.windows.net" and "AzureStack.local".
++ **"adminUsername"**: the Admin username for the Virtual Machine that the template’s going to create.
++ **"adminPassword"**: the password for the admin user. It must contain 3 of the following: 1 lowercase character, 1 uppercase character, 1 number, and 1 special character. Its minimum length is 12 characters.
++ **"configurationFile" & "modulesUrl"**: reserved for Azure China deployment. Keep them as the default values.
 
 
 ## Run the Demo App
 On both Azure and Azure Stack, you have to navigate to the portals to retrieve the URL of the demo application.
-* 1. Navigate to the Resource group blade that you've deployed the app with;
-* 2. Click on the resource "myPublicIP";
-* 3. You will get to know the IP address \<IPADDRESS> and DNS name \<DNS> of the app (DNS not applicable for Azure Stack for now).
+>1. Navigate to the Resource group blade that you've deployed the app with;
+2. Click on the resource "myPublicIP";
+3. You will get to know the IP address \<IPADDRESS> and DNS name \<DNS> of the app (DNS not applicable for Azure Stack for now).
 
-Navigate to http://\<IPADDRESS>:3000 or http://\<DNS>:3000. 
+Navigate to **http://\<IPADDRESS>:3000** or **http://\<DNS>:3000**. 
 Then, you will see the page with a form prefilled with some storage account information. 
 Go play with it or, alternatively, you could create a storage account by yourself and play with it on the app. Moreover, you could even create a storage account on a different environment and run the app against it, i.e., you could deploy your app in Azure Stack but run the tests against a storage account from Azure Global or Azure China (aka. Mooncake).
 
