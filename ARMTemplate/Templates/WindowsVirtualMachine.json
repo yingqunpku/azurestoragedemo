@@ -2,6 +2,17 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
+    "storageEndpoint": {
+      "type": "string",
+      "allowedValues": [
+        "core.windows.net",
+        "AzureStack.local",
+        "core.chinacloudapi.cn"
+      ],
+      "metadata": {
+        "description": "Storage endpoint."
+      }
+    },
     "adminUsername": {
       "type": "string",
       "minLength": 1,
@@ -13,17 +24,6 @@
       "type": "securestring",
       "metadata": {
         "description": "Password for the Virtual Machine."
-      }
-    },
-    "storageEndpoint": {
-      "type": "string",
-      "allowedValues": [
-        "core.windows.net",
-        "AzureStack.local",
-        "core.chinacloudapi.cn"
-      ],
-      "metadata": {
-        "description": "Storage endpoint."
       }
     },
     "configurationFile": {
@@ -269,7 +269,9 @@
           "ConfigurationFunction": "[concat(parameters('configurationFile'), '\\DeployApp')]",
           "Properties": {
             "MachineName": "[variables('vmName')]",
-            "storageEndpoint": "[parameters('storageEndpoint')]"
+            "storageEndpoint": "[parameters('storageEndpoint')]",
+            "accountName": "[variables('testStorageName')]",
+            "accountKey": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('testStorageName')), providers('Microsoft.Storage', 'storageAccounts').apiVersions[0]).keys[0].value]"
           }
         },
         "protectedSettings": null

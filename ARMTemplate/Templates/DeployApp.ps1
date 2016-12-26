@@ -1,6 +1,6 @@
 ﻿Configuration DeployApp
 {
-  param ($MachineName, $storageEndpoint)
+  param ($MachineName, $storageEndpoint, $accountName, $accountKey)
 
   Node $MachineName
   {
@@ -35,8 +35,8 @@
     File TestFile
     {
         Ensure = "Present"
-        DestinationPath = "C:\web\install.txt"
-        Contents = "Hello there ! $storageEndpoint Welcome to $MachineName!"
+        DestinationPath = "C:\web\public\storage.json"
+        Contents = '{"endpoint":"$storageEndpoint", "accountName":"$accountName", "accountKey":"$accountKey"}'
     }
 
     Script EnvPrep

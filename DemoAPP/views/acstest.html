@@ -1,6 +1,7 @@
 <% include header.html %>
 
-	<h4>Testing Progress on <%=account%>@<strong><%=host%></strong>:</h4>
+	<h4>Testing Progress on
+		<%=account%>@<strong><%=host%></strong>:</h4>
 	<div class="progress">
 		<div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
 			style="width: 0%;"> 0%
@@ -17,7 +18,7 @@
 				<% cases.forEach(function(nm){ %>
 					<li class="list-group-item" case="<%=nm.name%>">
 						<span class="glyphicon glyphicon-ok status-ok hidden" aria-hidden=true></span>
-						<span class="glyphicon glyphicon-remove status-error hidden" aria-hidden=true></span> 						
+						<span class="glyphicon glyphicon-remove status-error hidden" aria-hidden=true></span>
 						<span class="desc" case="<%=nm.name%>"><%=nm.desc%></span>
 					</li>
 					<% }) %>

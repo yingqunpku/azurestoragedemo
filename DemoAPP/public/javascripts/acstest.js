@@ -4,7 +4,16 @@ var total = 1;
 $(document).ready(function () {
 	interval = setInterval("updateStatus()", 500);
 	total = $("#cases li").length;
+	loadAccountInfo();
 });
+
+function loadAccountInfo(){
+	console.log("loadAccountInfo");
+	$.getJSON("/storage.json", function(data){
+		console.log(data);
+	});
+}
+
 
 function updateStatus() {
 	$.post("/result", { 'key': $('#key').val(), 'account': $('#account').val(), 'host': $('#host').val() }, function (json) {
