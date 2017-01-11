@@ -21,7 +21,7 @@ You could use one of these three tools to deploy the app:
 + Azure PowerShell [(Install PowerShell and connect to Azure Stack)](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-powershell)
 + Azure CLI [(Install and configure Azure Stack CLI)](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-cli)
 + These magical buttons:
-[![Deploy to Azure.com](http://azuredeploy.net/deploybutton.png "Deploy to Azure.com")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2Fazuredeploy.json)  [![Deploy to Azure Stack](https://github.com/yingqunpku/azurestoragedemo/raw/master/ARMTemplate/Templates/deploytoazurestack.png "Deploy to Azure Stack")](https://portal.azurestack.local/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2Fazuredeploy.json)
+[![Deploy to Azure.com](http://azuredeploy.net/deploybutton.png "Deploy to Azure.com")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2Fazuredeploy.json)  [![Deploy to Azure Stack](images/deploytoazurestack.png "Deploy to Azure Stack")](https://portal.azurestack.local/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2Fazuredeploy.json)
 
 
 **PowerShell deployment code:**
