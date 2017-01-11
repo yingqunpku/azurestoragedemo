@@ -3,7 +3,7 @@ This is a web app sample with Node.js bundled with ARM template and DSC Extensio
 The web app runs simple scenario tests against Azure Consistent Storage APIs through Azure Node.js SDK. 
 The bundle also demonstrates how a tenant could deploy an Azure (Stack) Node.js web application with DSC extension on an Azure (Stack) VM created with an ARM template.
 
-[![Visualize the ARM Template](http://armviz.io/visualizebutton.png "Visualize the ARM Template")](http://armviz.io/#/?load=https://raw.githubusercontent.com/yingqunpku/azurestoragedemo/master/ARMTemplate/Templates/WindowsVirtualMachine.json)
+[![Visualize the ARM Template](http://armviz.io/visualizebutton.png "Visualize the ARM Template")](http://armviz.io/#/?load=https://raw.githubusercontent.com/yingqunpku/azurestoragedemo/master/ARMTemplate/Templates/azuredeploy.json)
 
 ## Deployment
 Normally it will take 15-20 minutes on Azure.com to accomplish the deployment. On Azure Stack POC (TP2 one-node deployment), it takes 20-30 minutes.
@@ -21,7 +21,7 @@ You could use one of these three tools to deploy the app:
 + Azure PowerShell [(Install PowerShell and connect to Azure Stack)](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-powershell)
 + Azure CLI [(Install and configure Azure Stack CLI)](https://docs.microsoft.com/en-us/azure/azure-stack/azure-stack-connect-cli)
 + These magical buttons:
-[![Deploy to Azure.com](http://azuredeploy.net/deploybutton.png "Deploy to Azure.com")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2FWindowsVirtualMachine.json)  [![Deploy to Azure Stack](https://github.com/yingqunpku/azurestoragedemo/raw/master/ARMTemplate/Templates/deploytoazurestack.png "Deploy to Azure Stack")](https://portal.azurestack.local/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2FWindowsVirtualMachine.json)
+[![Deploy to Azure.com](http://azuredeploy.net/deploybutton.png "Deploy to Azure.com")](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2Fazuredeploy.json)  [![Deploy to Azure Stack](https://github.com/yingqunpku/azurestoragedemo/raw/master/ARMTemplate/Templates/deploytoazurestack.png "Deploy to Azure Stack")](https://portal.azurestack.local/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fyingqunpku%2Fazurestoragedemo%2Fmaster%2FARMTemplate%2FTemplates%2Fazuredeploy.json)
 
 
 **PowerShell deployment code:**
@@ -38,7 +38,7 @@ Step 1. Create a new resource group on the portal or with the following scripts 
 
 Step 2. Kickoff the deployment
 > ```PowerShell
-> New-AzureRmResourceGroupDeployment -Name testdep -ResourceGroupName acstest -TemplateUri "https://raw.githubusercontent.com/yingqunpku/azurestoragedemo/master/ARMTemplate/Templates/WindowsVirtualMachine.json"  
+> New-AzureRmResourceGroupDeployment -Name testdep -ResourceGroupName acstest -TemplateUri "https://raw.githubusercontent.com/yingqunpku/azurestoragedemo/master/ARMTemplate/Templates/azuredeploy.json"  
 > ```
 
 
