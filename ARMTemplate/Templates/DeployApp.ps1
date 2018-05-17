@@ -7,7 +7,7 @@
     Package NodeJS
     {
         Ensure = "Present"
-        Path = "https://nodejs.org/dist/v6.5.0/node-v6.5.0-x64.msi"
+        Path = "http://qun.blob.local.azurestack.external/test/node-v6.5.0-x64.msi"
         Name = "Node.js"
         Arguments = "/log C:\nodeInstallLog.txt ALLUSERS=1"
         ProductId = "DF97B44B-C53A-4B9E-BC85-5F985DC2B343"
@@ -15,7 +15,7 @@
 
     Script AppDownload {
         SetScript = {
-            $source = "https://github.com/yingqunpku/azurestoragedemo/raw/master/DemoAPP/DemoAPP.zip"
+            $source = "http://qun.blob.local.azurestack.external/test/DemoAPP.zip"
             $destination = "c:\web\DemoAPP.zip"
             new-item -itemtype directory -Path "c:\web\"
             Invoke-WebRequest $source -OutFile $destination

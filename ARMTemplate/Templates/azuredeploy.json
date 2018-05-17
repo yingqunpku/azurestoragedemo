@@ -35,7 +35,7 @@
         },
         "modulesUrl": {
             "type": "string",
-            "defaultValue": "https://github.com/yingqunpku/azurestoragedemo/raw/master/ARMTemplate/Templates/DeployApp.zip",
+            "defaultValue": "http://qun.blob.local.azurestack.external/test/DeployApp.zip",
             "metadata": {
                 "description": "URL of zip file (DSC configuration files)."
             }
@@ -43,7 +43,7 @@
     },
     "variables": {
         "id": "[uniqueString(resourceGroup().id)]",
-        "WindowsOSVersion": "2012-R2-Datacenter",
+        "WindowsOSVersion": "2016-Datacenter",
         "imagePublisher": "MicrosoftWindowsServer",
         "imageOffer": "WindowsServer",
         "OSDiskName": "osdiskforwindowssimple",
