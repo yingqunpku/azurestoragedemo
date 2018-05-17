@@ -44,7 +44,7 @@ Step 2. Kickoff the deployment
 
 ### Parameters
 There are 5 parameters (2 with default values) for the ARM Template deployed:
-+ **"storageEndpoint"**: the target environment. Allowed values include "core.windows.net" and "AzureStack.local".
++ **"storageEndpoint"**: the target environment. Allowed values include "core.windows.net" and "local.azurestack.external".
 + **"adminUsername"**: the Admin username for the Virtual Machine that the template’s going to create.
 + **"adminPassword"**: the password for the admin user. It must contain 3 of the following: 1 lowercase character, 1 uppercase character, 1 number, and 1 special character. Its minimum length is 12 characters.
 + **"configurationFile" & "modulesUrl"**: reserved for Azure China deployment. Keep them as the default values.
