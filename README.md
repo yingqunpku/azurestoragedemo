@@ -1,4 +1,6 @@
-﻿# Azure (Stack) Storage Demo with Node.js
+﻿Container BRANCH
+
+# Azure (Stack) Storage Demo with Node.js
 This is a web app sample with Node.js bundled with ARM template and DSC Extension.
 The web app runs simple scenario tests against Azure Consistent Storage APIs through Azure Node.js SDK. 
 The bundle also demonstrates how a tenant could deploy an Azure (Stack) Node.js web application with DSC extension on an Azure (Stack) VM created with an ARM template.
