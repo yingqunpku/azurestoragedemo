@@ -1,4 +1,4 @@
-﻿Master branch for web service only
+﻿Master branch for web service PRIVATE PREVIEW only
 
 # Azure (Stack) Storage Demo with Node.js
 This is a web app sample with Node.js bundled with ARM template and DSC Extension.
